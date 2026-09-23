@@ -36,11 +36,21 @@ require("layout-views"):setup({
 ```toml
 [mgr]
 prepend_keymap = [
-	{ on = [ "T", "n" ], run = "plugin layout-views -- next", desc = "Layout: next view" },
-	{ on = [ "T", "p" ], run = "plugin layout-views -- prev", desc = "Layout: prev view" },
-	{ on = [ "T", "r" ], run = "plugin layout-views -- reset", desc = "Layout: reset" },
-	{ on = [ "T", "f" ], run = "plugin layout-views -- focus!", desc = "Layout: toggle focus" },
-	{ on = [ "T", "l" ], run = "plugin layout-views -- list!", desc = "Layout: toggle list" },
+	# --- Layout views: один список режимов ---
+	# cycle
+	{ on = ["T", "v"], run = "plugin layout-views next", desc = "Layout: next view" },
+	{ on = ["T", "V"], run = "plugin layout-views prev", desc = "Layout: previous view" },
+
+	# presets
+	{ on = ["T", "d"], run = "plugin layout-views default", desc = "Layout: default [20 30 50]" },
+	{ on = ["T", "F"], run = "plugin layout-views files", desc = "Layout: files [10 60 30]" },
+	{ on = ["T", "f"], run = "plugin layout-views preview_and_files", desc = "Layout: files [10 30 60]" },
+	{ on = ["T", "2"], run = "plugin layout-views dual", desc = "Layout: dual [0 50 50]" },
+	{ on = ["T", "p"], run = "plugin layout-views preview", desc = "Layout: preview [0 25 75]" },
+
+	# toggle туда-обратно
+	{ on = ["T", "Z"], run = "plugin layout-views toggle focus", desc = "Layout: toggle focus [0 0 100]" },
+	{ on = ["T", "z"], run = "plugin layout-views toggle list", desc = "Layout: toggle list [0 100 0]" },
 ]
 ```
 

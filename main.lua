@@ -11,6 +11,8 @@ local config = {
 		default = { 20, 30, 50 },
 		-- Больше список файлов
 		files = { 10, 60, 30 },
+        -- preview-and-files
+        preview_and_files = { 10, 30, 60 },
 		-- Без parent: список | preview
 		dual = { 0, 50, 50 },
 		-- Крупный preview
@@ -19,11 +21,9 @@ local config = {
 		focus = { 0, 0, 100 },
 		-- Только список (бывший min-preview / list)
 		list = { 0, 100, 0 },
-        -- preview-and-files
-        preview_and_files = { 10, 30, 60 },
 	},
 	--- @type string[]
-	order = { "default", "files", "dual", "preview", "focus", "list" },
+	order = { "default", "files", "preview_and_files", "dual", "preview", "focus", "list" },
 	notify = true,
 }
 --- @param a any
